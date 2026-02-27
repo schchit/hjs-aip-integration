@@ -30,7 +30,7 @@ This integration enables:
 ## IETF Discussion
 
 This work is part of the Agent2Agent IETF working group discussion:
-[- [Working Group Thread](https://github.com/yungcero/agent2agent/issues/14)](https://github.com/openagentidentityprotocol/agentidentityprotocol/discussions/14#discussioncomment-15927585)
+[- [Working Group Thread]([https://github.com/yungcero/agent2agent/issues/14](https://github.com/openagentidentityprotocol/agentidentityprotocol/discussions/14#discussioncomment-15927585))]
 
 ## License
 
