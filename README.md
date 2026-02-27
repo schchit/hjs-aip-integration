@@ -12,11 +12,11 @@ This integration enables:
 - **Long-term verifiability** of AI agent actions via blockchain anchoring
 
 ## Repository Structure
-.
-├── mappings/ # Field-level mappings between HJS and AIP
-├── scripts/ # Conversion scripts (AIP log → HJS evidence)
-├── examples/ # Sample audit logs and generated evidence
-└── docs/ # Integration proposals for IETF/working groups
+
+- `mappings/` - Field-level mappings between HJS and AIP
+- `scripts/` - Conversion scripts (AIP log → HJS evidence)
+- `examples/` - Sample audit logs and generated evidence
+- `docs/` - Integration proposals for IETF/working groups
 
 text
 
