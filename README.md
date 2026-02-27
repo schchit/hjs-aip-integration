@@ -24,13 +24,13 @@ This integration enables:
 
 ## Related Specifications
 
-## Related Specifications
-
-
-### Related Specifications
-
 - [HJS Protocol](https://github.com/schchit/hjs-api) - Human Judgment System core specification
 - [AIP v1alpha3](https://agentidentityprotocol.io/specs/aip-v1alpha3) - Agent Identity Protocol
+
+## IETF Discussion
+
+This work is part of the Agent2Agent IETF working group discussion:
+- [Working Group Thread](https://github.com/yungcero/agent2agent/issues/14)
 
 ## License
 
