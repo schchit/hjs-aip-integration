@@ -18,8 +18,6 @@ This integration enables:
 - `examples/` - Sample audit logs and generated evidence
 - `docs/` - Integration proposals for IETF/working groups
 
-text
-
 ## Quick Start
 
 *(Coming soon)*
