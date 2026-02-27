@@ -1,0 +1,21 @@
+{
+  "timestamp": "2026-02-27T10:30:45.123Z",
+  "direction": "upstream",
+  "method": "tools/call",
+  "tool": "read_file",
+  "args": {
+    "path": "/home/user/docs/report.txt"
+  },
+  "decision": "ALLOW",
+  "policy_mode": "enforce",
+  "violation": false,
+  "session_id": "550e8400-e29b-41d4-a716-446655440000",
+  "agent_id": "ag_550e8400-e29b-41d4-a716-446655440000",
+  "agent_name": "Cursor IDE Agent",
+  "user_id": "user@example.com",
+  "user_auth_method": "oidc",
+  "delegation_scope": "tools",
+  "aat_jti": "aat_660e8400-e29b-41d4-a716-446655440001",
+  "aat_issuer": "https://issuer.aip.example.com",
+  "policy_hash": "a3c7f2e8d9b4f1e2c8a7d6f3e9b2c4f1a8e7d3c2b5f4e9a7c3d8f2b6e1a9c4f7"
+}
