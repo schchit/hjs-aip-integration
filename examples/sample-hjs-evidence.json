@@ -1,0 +1,46 @@
+{
+  "hjs": {
+    "version": "1.0",
+    "primitives": {
+      "delegation": {
+        "from": "user@example.com",
+        "to": "ag_550e8400-e29b-41d4-a716-446655440000",
+        "time": "2026-02-27T10:30:45.123Z",
+        "scope": "tools",
+        "constraints": {}
+      },
+      "judgment": {
+        "input_commitment": "sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "model_id": "unknown",
+        "parameters": {}
+      },
+      "termination": {
+        "status": "allow",
+        "output_commitment": null,
+        "duration_ms": null
+      },
+      "verification": {
+        "verifier": "https://issuer.aip.example.com",
+        "method": "signature_verification",
+        "time": "2026-02-27T10:30:45.123Z",
+        "result": "valid"
+      }
+    },
+    "hashes": {
+      "delegation_hash": "a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2",
+      "judgment_hash": "b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3",
+      "termination_hash": "c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4",
+      "verification_hash": "d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5",
+      "chain_hash": "e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7"
+    },
+    "evidence": {
+      "ots_proof": null,
+      "timestamp": "2026-02-27T10:30:45.123Z"
+    },
+    "aip_context": {
+      "session_id": "550e8400-e29b-41d4-a716-446655440000",
+      "policy_hash": "a3c7f2e8d9b4f1e2c8a7d6f3e9b2c4f1a8e7d3c2b5f4e9a7c3d8f2b6e1a9c4f7",
+      "aat_jti": "aat_660e8400-e29b-41d4-a716-446655440001"
+    }
+  }
+}
