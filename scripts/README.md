@@ -17,3 +17,8 @@ python aip2hjs.py input-audit.json --output evidence.json
 
 # Generate OTS proof (optional)
 python ots-anchor.py evidence.json --anchor
+Mapping Reference
+The field mappings used by these scripts are defined in /mappings/hjs-aip-mapping.json.
+
+Development
+Scripts will be added incrementally. Contributions and feedback welcome.
