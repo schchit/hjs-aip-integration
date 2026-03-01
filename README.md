@@ -1,36 +1,95 @@
-# HJS-AIP Integration Layer
+# HJS-AIP Integration Analysis
 
-This repository defines the integration layer between **HJS (Human Judgment System)** and **AIP (Agent Identity Protocol)**.
+**Status: CONCEPTUAL - PENDING COMMUNITY FEEDBACK**
 
-## Overview
+This repository documents the **proposed** integration between **HJS (Human Judgment System)** and **AIP (Agent Identity Protocol)**.
 
-HJS provides four accountability primitives (Judgment, Delegation, Termination, Verification) with OpenTimestamps anchoring to Bitcoin. AIP provides identity, authentication, and policy enforcement for AI agents.
+**Not a working integration.** Subject to AIP community adoption of extensions.
 
-This integration enables:
-- **AIP audit logs** to be structured as **HJS evidence packages**
-- **HJS primitives** to be populated from **AIP events** (AAT validation, tool calls, policy decisions)
-- **Long-term verifiability** of AI agent actions via blockchain anchoring
+---
 
-## Repository Structure
+## Current Reality
 
-- `mappings/` - Field-level mappings between HJS and AIP
-- `scripts/` - Conversion scripts (AIP log → HJS evidence)
-- `examples/` - Sample audit logs and generated evidence
-- `docs/` - Integration proposals for IETF/working groups
+| HJS Primitive | AIP v1alpha3 Support | Extractable? |
+|:---|:---|:---:|
+| **Delegation** | `user_id`, `agent_id`, `delegation_scope` | ✅ **YES** |
+| **Verification** | `aat_issuer`, AAT validation | ⚠️ Partial |
+| **Judgment** | `model_id`, `model_parameters` - **MISSING** | ❌ **NO** |
+| **Termination** | `output_commitment`, execution status - **MISSING** | ❌ **NO** |
 
-## Quick Start
+**Result: Only 1.5/4 primitives extractable from current AIP v1alpha3.**
 
-*(Coming soon)*
+Complete evidence chain **requires AIP extensions or HJS standalone mode**.
 
-## Related Specifications
+---
 
-- [HJS Protocol](https://github.com/schchit/hjs-api) - Human Judgment System core specification
-- [AIP v1alpha3](https://agentidentityprotocol.io/specs/aip-v1alpha3) - Agent Identity Protocol
+## What This Repository Contains
+
+| Directory | Content | Status |
+|:---|:---|:---|
+| `mappings/` | Field-level mapping analysis with gap annotations | ✅ Draft complete |
+| `scripts/` | Planned conversion scripts | ❌ **Not implemented** |
+| `examples/` | Sample AIP log + simulated HJS evidence (labeled) | ✅ Shows target state |
+| `docs/` | Integration proposals for IETF discussion | 📝 In progress |
+
+---
+
+## Examples
+
+### `examples/sample-aip-audit.json`
+**Real AIP v1alpha3 audit log format** (Section 12).
+
+Shows what AIP actually logs today. Includes `_comment` fields explaining gaps.
+
+### `examples/sample-hjs-evidence.json`
+**Simulated HJS evidence** showing target state.
+
+Demonstrates what complete evidence WOULD look like if AIP adopted proposed extensions. **Cannot be generated from real AIP logs alone.**
+
+---
+
+## Required AIP Extensions
+
+For complete integration, AIP v1alpha4+ would need:
+
+| Extension | For HJS Primitive | Purpose |
+|:---|:---|:---|
+| `model_id` | Judgment | Identify AI model |
+| `model_parameters` | Judgment | Record model config |
+| `input_commitment` | Judgment | Cryptographic input hash |
+| `execution_status` | Termination | Success/failure/exception |
+| `output_commitment` | Termination | Cryptographic output hash |
+
+**Status: Proposed to AIP maintainers. Not confirmed.**
+
+---
+
+## Honest Assessment
+
+**What works today:**
+- Extracting Delegation from AIP logs
+- Using AAT validation as partial Verification
+- HJS standalone mode (complete, no AIP dependency)
+
+**What doesn't work:**
+- Complete evidence chain from AIP logs alone
+- Judgment/Termination without AIP extensions
+- Verifiable hash chain (requires all 4 primitives)
+
+**Recommendation:**
+Use [HJS standalone](https://github.com/schchit/hjs-api) for production accountability. This AIP integration is experimental and incomplete.
+
+---
 
 ## IETF Discussion
 
-This work is part of the Agent2Agent IETF working group discussion:
-- [Working Group Thread](https://github.com/openagentidentityprotocol/agentidentityprotocol/discussions/14#discussioncomment-15927585)
+Active discussion with AIP maintainers:
+- [Agent2Agent Working Group Thread](https://github.com/openagentidentityprotocol/agentidentityprotocol/discussions/14#discussioncomment-15927585)
+
+## Related Specifications
+
+- [HJS Protocol](https://github.com/schchit/hjs-api) - Human Judgment System (standalone)
+- [AIP v1alpha3](https://agentidentityprotocol.io/specs/aip-v1alpha3) - Agent Identity Protocol
 
 ## License
 
