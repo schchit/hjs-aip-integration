@@ -1,24 +1,36 @@
 # Scripts
 
-This directory contains conversion scripts that transform AIP audit logs into HJS evidence packages.
+**Status: NOT IMPLEMENTED**
 
-## Planned scripts
+This directory is reserved for future conversion scripts. No code 
+currently exists.
 
-| Script | Language | Description |
-|--------|----------|-------------|
-| `aip2hjs.py` | Python | Reads AIP v1alpha3 audit logs, extracts HJS primitives, generates evidence package with hash chain |
-| `ots-anchor.py` | Python | Optional: submits chain_hash to OpenTimestamps for Bitcoin anchoring |
+## Planned (if AIP extensions adopted)
 
-## Usage (once available)
+| Script | Purpose | Blocked By |
+|--------|---------|------------|
+| `aip2hjs.py` | AIP log → HJS evidence | AIP v1alpha3 missing model_id, output_commitment |
+| `ots-anchor.py` | Bitcoin anchoring | HJS standalone already provides this |
 
-```bash
-# Convert AIP audit log to HJS evidence
-python aip2hjs.py input-audit.json --output evidence.json
+## Current Reality
 
-# Generate OTS proof (optional)
-python ots-anchor.py evidence.json --anchor
-Mapping Reference
-The field mappings used by these scripts are defined in /mappings/hjs-aip-mapping.json.
+Complete evidence chain from AIP logs alone is **IMPOSSIBLE** with 
+v1alpha3. See `/mappings/hjs-aip-mapping.json` for gap analysis.
 
-Development
-Scripts will be added incrementally. Contributions and feedback welcome.
+**Alternative**: Use [HJS standalone](https://github.com/schchit/hjs-api) 
+for production accountability.
+
+## If AIP Adopts Extensions
+
+If AIP v1alpha4+ adds required fields, scripts may be implemented 
+to:
+- Extract Delegation primitive (fully supported)
+- Extract partial Verification (with semantic gaps)
+- Supplement or skip Judgment/Termination (requires extensions)
+
+No development until AIP extensions confirmed.
+
+## Contributing
+
+If interested in prototyping, open an issue to discuss approach 
+before submitting PR.
