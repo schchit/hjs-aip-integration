@@ -1,46 +1,76 @@
 {
-  "hjs": {
-    "version": "1.0",
-    "primitives": {
-      "delegation": {
-        "from": "user@example.com",
-        "to": "ag_550e8400-e29b-41d4-a716-446655440000",
-        "time": "2026-02-27T10:30:45.123Z",
-        "scope": "tools",
-        "constraints": {}
-      },
-      "judgment": {
-        "input_commitment": "sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-        "model_id": "unknown",
-        "parameters": {}
-      },
-      "termination": {
-        "status": "allow",
-        "output_commitment": null,
-        "duration_ms": null
-      },
-      "verification": {
-        "verifier": "https://issuer.aip.example.com",
-        "method": "signature_verification",
-        "time": "2026-02-27T10:30:45.123Z",
-        "result": "valid"
+  "_comment": "SIMULATED HJS EVIDENCE - HYPOTHETICAL COMPLETION",
+  "_status": "Shows what HJS WOULD generate if AIP v1alpha3 included required fields. Actual evidence from this AIP log would have EMPTY judgment and INCOMPLETE termination.",
+  "_required_aip_extensions": ["model_id", "model_parameters", "output_commitment", "execution_status"],
+  "_aip_v1alpha3_source": "sample-aip-audit.json",
+  
+  "hjs_version": "1.0",
+  "evidence_id": "hjs_ev_550e8400-e29b-41d4-a716-446655440000",
+  "generated_at": "2026-02-27T10:30:45.500Z",
+  
+  "primitives": {
+    "delegation": {
+      "_source": "AIP v1alpha3 - FULLY EXTRACTED",
+      "_confidence": "HIGH",
+      "from": "user@example.com",
+      "to": "ag_550e8400-e29b-41d4-a716-446655440000",
+      "time": 1740654645123,
+      "scope": "tools",
+      "constraints": {
+        "allowed_tools": ["read_file"],
+        "delegation_scope": "tools"
       }
     },
-    "hashes": {
-      "delegation_hash": "a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2",
-      "judgment_hash": "b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3",
-      "termination_hash": "c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4",
-      "verification_hash": "d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5",
-      "chain_hash": "e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7"
+    "judgment": {
+      "_source": "AIP v1alpha3 - NOT AVAILABLE",
+      "_confidence": "NONE",
+      "_required_extensions": {
+        "model_id": "Identify AI model (e.g., gpt-4-2026-02)",
+        "model_parameters": "Model config (temperature, max_tokens)",
+        "input_commitment": "SHA256 hash of input data"
+      },
+      "_note": "AIP v1alpha3 does not record AI model information. Cannot trace WHICH model made decision.",
+      "input_commitment": "SHA256_OF_ARGS_NOT_STANDARDIZED_IN_AIP",
+      "model_id": "NOT_IN_AIP_V1ALPHA3",
+      "parameters": "NOT_IN_AIP_V1ALPHA3"
     },
-    "evidence": {
-      "ots_proof": null,
-      "timestamp": "2026-02-27T10:30:45.123Z"
+    "termination": {
+      "_source": "AIP v1alpha3 - PARTIAL/AMBIGUOUS",
+      "_confidence": "LOW",
+      "_issue": "AIP 'decision' is AUTHORIZATION result (ALLOW/BLOCK), not EXECUTION result (success/failure/exception)",
+      "_required_extensions": {
+        "execution_status": "success/failure/exception",
+        "output_commitment": "SHA256 hash of tool output"
+      },
+      "status": "ALLOW - THIS IS POLICY DECISION, NOT TOOL RESULT",
+      "output_commitment": "NOT_IN_AIP_V1ALPHA3",
+      "duration_ms": "NOT_EXPLICITLY_LOGGED"
     },
-    "aip_context": {
-      "session_id": "550e8400-e29b-41d4-a716-446655440000",
-      "policy_hash": "a3c7f2e8d9b4f1e2c8a7d6f3e9b2c4f1a8e7d3c2b5f4e9a7c3d8f2b6e1a9c4f7",
-      "aat_jti": "aat_660e8400-e29b-41d4-a716-446655440001"
+    "verification": {
+      "_source": "AIP v1alpha3 - PARTIAL",
+      "_confidence": "MEDIUM",
+      "_semantic_gap": "AAT validation verifies IDENTITY (who), not RESULT CORRECTNESS (what). HJS Verification designed for technical verification of output.",
+      "verifier": "https://issuer.aip.example.com",
+      "method": "AAT_signature_verification",
+      "time": 1740654645123,
+      "result": "valid"
     }
+  },
+  
+  "hashes": {
+    "_note": "CANNOT compute valid chain_hash because judgment and termination are incomplete",
+    "delegation_hash": "sha256:...",
+    "judgment_hash": "INCOMPLETE - MISSING REQUIRED FIELDS",
+    "termination_hash": "INCOMPLETE - MISSING REQUIRED FIELDS",
+    "verification_hash": "sha256:...",
+    "chain_hash": "CANNOT_COMPUTE - PREREQUISITE_HASHES_INCOMPLETE"
+  },
+  
+  "evidence": {
+    "_status": "INCOMPLETE - CANNOT GENERATE OTS PROOF",
+    "_reason": "OpenTimestamps requires complete chain_hash. Chain hash requires all 4 primitives.",
+    "ots_proof": "NOT_GENERATED",
+    "bitcoin_txid": null,
+    "timestamp": null
   }
 }
